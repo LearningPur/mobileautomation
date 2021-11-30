@@ -1,0 +1,16 @@
+name: coteafs-appium Test Suite
+listeners:
+  - com.github.wasiqb.coteafs.listeners.ConfigListener
+  - com.github.wasiqb.coteafs.listeners.SuiteListener
+  - com.github.wasiqb.coteafs.listeners.TestListener
+  - com.github.wasiqb.coteafs.listeners.ExecutionListener
+  - com.github.wasiqb.coteafs.listeners.DataProviderListener
+  - com.github.wasiqb.coteafs.listeners.AnnotationTransformer
+  - com.github.wasiqb.coteafs.listeners.SuiteResultReporter
+tests:
+  - name: Android Test Local App
+    parameters: { server: default_server, device: default_device }
+    classes:
+      - name: com.github.wasiqb.coetafs.appium.saucedemo.android.SauceDemoTest
+        includedMethods:
+          - testLogin
